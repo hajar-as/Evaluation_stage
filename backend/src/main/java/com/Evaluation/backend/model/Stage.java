@@ -14,12 +14,14 @@ public class Stage {
     private String objectif;
 
     @ManyToOne
+    @JoinColumn(name = "entreprise_id")
     private Entreprise entreprise;
 
     @ManyToMany
     private List<Stagiaire> stagiaires;
 
     @OneToOne
+    @JoinColumn(name = "periode_id")
     private Periode periode;
 
     public Stage(String description, String objectif) {
